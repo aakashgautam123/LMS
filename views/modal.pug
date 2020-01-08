@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  form( method="POST", action='/leads/edit/'+lead._id)
+    #form-group
+      label Send Mail:
+      input.form-control(name="assigneEmail", type="text" value=lead.email);
+      br
+      input.btn.btn-primary(value="Submit", type="submit");
+      
+      
+ 
+
+
+  //- #simpleModal.modal
+  //-   .modal-content
+  //-     .modal-header
+  //-       span.closeBtn
+  //-       h2 Assign Lead
+  //-     .modal-body
+  //-       form#moadalForm(action='/leads/sendmail/', method="post")
+  //-         | Assign To:
+  //-         br
+  //-         input(type='email', name='assigneeEmail', placeholder=' assigneeEmail')
+  //-         br
+  //-         input(type='submit', value='Submit')
+  //-     .modal-footer
+  //-       p © FG Wilson
+
+      

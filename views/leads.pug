@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  .container      
+    h1.title #{title}
+    .btn-group
+      button.btn.btn-info.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | Filter Using Region
+      .dropdown-menu
+        a.dropdown-item(href='/leads/region/other') Other
+        a.dropdown-item(href='/leads/region/Southafrica') South Africa 
+        a.dropdown-item(href='/leads/region/Nigeria') Nigeria
+        a.dropdown-item(href='/leads/region/Kenya') Kenya
+        a.dropdown-item(href='/leads/region/Ghana') Ghana
+        a.dropdown-item(href='/leads/region/Tanzania') Tanzania
+        a.dropdown-item(href='/leads/region/Senegal') Senegal 
+        a.dropdown-item(href='/leads/region/Zimbabwe') Zimbabwe
+        a.dropdown-item(href='/leads/region/Rwanda') Rwanda 
+        a.dropdown-item(href='/leads/region/Angola') Angola
+        a.dropdown-item(href='/leads/region/Namibia') Namibia 
+        a.dropdown-item(href='/leads/region/Zambia') Zambia           
+        a.dropdown-item(href='/leads/region/Egypt') Egypt
+        a.dropdown-item(href='/leads/region/Centralafricanrepublic') Central African Republic 
+        a.dropdown-item(href='/leads/region/Congo') Congo           
+        .dropdown-divider
+        a.dropdown-item(href='/leads/all')  View All
+
+    .btn-group
+      button.btn.btn-info.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | Filter Using Status
+      .dropdown-menu
+        a.dropdown-item(href='/leads/status/notassign') Not Assigned
+        a.dropdown-item(href='/leads/status/assigned') Assigned 
+        a.dropdown-item(href='/leads/status/quotationgiven') Quotation Given
+        a.dropdown-item(href='/leads/status/completedwon') Completed Won
+        a.dropdown-item(href='/leads/status/notconverted') Completed Lost
+        .dropdown-divider
+        a.dropdown-item(href='/leads/all')  View All    
+    //-a.btn.btn-info.filter-btn(href='/leads/region') Filter Using Region
+    //-a.btn.btn-info.filter-btn(href='/leads/status')  Filter Using Status
+    
+
+    div#dvData
+      table.table.table-hover.table-bordered#myTable
+        thead
+          tr
+            th 
+            th Name 
+            th Company
+            th Region
+            th Phone
+            th Product Type
+            th Date
+            th Source
+            th Manage Lead
+        tbody
+          each lead, i in leads.reverse()
+              tr
+                td= i+1
+                td= lead.name
+                td= lead.company
+                td= lead.region
+                td= lead.phone
+                td= lead.product
+                td= lead.date
+                td= lead.source
+                td
+                  a(href="/leads/data/"+lead._id) Manage Lead
+                

@@ -1,0 +1,164 @@
+doctype html  
+html(lang='en')  
+ head
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  title Contact Form
+  script(src="/bower_components/jquery/dist/jquery.js")
+  link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.css")
+  link(rel="stylesheet", href="/css/style.css")    
+body 
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-111395605-1')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111395605-1');
+
+      //pixel code
+  script.
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '347926902396137');
+    fbq('track', 'PageView');
+  noscript
+    img(height='1', width='1', src='https://www.facebook.com/tr?id=347926902396137&ev=PageView\
+    &noscript=1')
+    
+  .navbar.navbar-light.bg-light.navbar-expand-lg.bg-primary.contactNav
+    .container
+      a.navbar-brand(href='https://ghana.jmglimited.com')
+        img(src='/images/fg-wilson-logo.jpg', width='140', height='auto', alt='')      
+      a.navbar-brand(href='#')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarColor01', aria-controls='navbarColor01', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarColor01.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='https://ghana.jmglimited.com/index.html')
+              | Home
+              span.sr-only (current)    
+          li.nav-item
+            a.nav-link(href='https://ghana.jmglimited.com/index.html') 
+              | About us
+          li.nav-item
+            a.nav-link(href='https://ghana.jmglimited.com/small-range.html') 
+              | Products 
+          li.nav-item
+            a.nav-link(href='#') 
+              | Support 
+        
+            
+  //-nav.navbar.navbar-expand-sm.bg-light.navbar-light
+      ul.navbar-nav
+        li.nav-item.active
+          a.nav-link(href='#') Active
+        li.nav-item
+          a.nav-link(href='#') Link
+        li.nav-item
+          a.nav-link(href='#') Link
+        li.nav-item
+          a.nav-link.disabled(href='#') Disabled
+
+
+  //-.container
+    != messages('message', locals)
+    if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+
+
+.container#contactForm
+  .col-sm-12
+    h5.text--center Spare few minutes to fill in this form with your requirements and we will contact you.  
+  .col-sm-12
+    form(action="/leads/add", method="POST")
+      .col-sm-12
+        #form-group
+          label Name:
+          input.form-control(name="name", type="text" required)
+      .col-sm-12
+        #form-group
+          label Email:
+          input.form-control(name="email", type="email" required)
+      .col-sm-12
+        #form-group
+          label Phone:
+          input.form-control(name="phone", type="number" required)
+      .col-sm-12
+        #form-group
+          label Company:
+          input.form-control(name="company", type="text" required)
+      .col-sm-12
+        #form-group
+          label Address:
+          input.form-control(name="address", type="text" required)
+      .col-sm-12
+        #form-group
+          label Please Select Region:
+          select.form-control.selectpicke(name="region" required)
+            <option value="">Select Region from Dropdown</option>
+             <option>Other</option>           
+            <option>South Africa</option>
+            <option>Nigeria</option>
+            <option>Kenya</option>
+            <option>Ghana</option>
+            <option>Tanzania</option>
+            <option>Senegal</option>
+            <option>Zimbabwe</option>
+            <option>Rwanda</option>
+            <option>Angola</option>
+            <option>Namibia</option>
+            <option>Zambia</option>
+            <option>Egypt</option>           
+            <option>Central African Republic</option>
+            <option>Congo</option>           
+            
+      .col-sm-12
+        #form-group
+          label Source :
+          input(type='radio', name='source', value='Billboard' required)
+          |  Billboard
+          input(type='radio', name='source', value='Facebook' required)
+          |  Facebook
+          input(type='radio', name='source', value='Website' required)
+          |  Website
+          input(type='radio', name='source', value='Google' required)
+          |  Google
+
+      .col-sm-12
+        #form-group
+          label Product Type :
+          input(type='radio', name='product', value='Generator' required)
+          |  Generator
+          input(type='radio', name='product', value='Spare Parts' required)
+          |  Spare Parts
+          input(type='radio', name='product', value='Technical Support' required)
+          |  Technical Support        
+              
+        
+      .col-sm-12
+        #form-group.radio-inline
+          label.Product Range :
+          input(type='radio', name='productRange', value='Below 290 kVA' required)
+          | Small Range (<220 kVA) 
+          input(type='radio', name='productRange', value='Meduim 225-938 kVA' required)
+          |  Medium Range (230-850 kVA)
+          input(type='radio', name='productRange', value='Above 730 kVA' required)
+          |  Large Range (>730 kVA)
+          
+      .col-sm-12
+        #form-group
+          label Message:
+          textarea.form-control(name="message" , placeholder="Please type your requirements such as the purpose of enquiry, fuel capacity, features required or any other queries" required)
+          br
+          input.btn.btn-primary(value="Submit", type="submit")   
+  script(src="/bower_components/bootstrap/dist/js/bootstrap.bundle.min.js")
+  script(src="/bower_components/bootstrap/dist/js/bootstrap.js")    
+  script(src="/js/main.js")               
+      

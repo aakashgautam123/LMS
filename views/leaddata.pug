@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  .container
+    table.table.table-bordered
+      thead
+        tr
+          th Name
+          td= lead.name
+        tr  
+          th Email
+          td= lead.email
+        tr  
+          th Phone
+          td= lead.phone
+        tr  
+          th Company
+          td= lead.company
+        tr  
+          th Date
+          td= lead.date
+        tr  
+          th Product
+          td= lead.product
+        tr
+          th Product Range  
+          td= lead.productRange
+        tr  
+          th Status
+          td= lead.status
+        tr
+          th Message
+          td= lead.message  
+        tr
+    if user    
+    a.btn.btn-primary(href='/leads/edit/'+lead._id) Update Lead
+    //a.btn.btn-danger.delete-lead(href='/' data-id= lead._id) Delete
+    a.btn.btn-danger(href='/leads/delete/'+lead._id) Delete 
+    //- a.btn.btn-danger(href='/leads/edit/'+lead._id) Assign Lead 
+    form(method="POST", action='/leads/sendMail/'+lead._id)
+      #form-group
+        label Assign Lead:
+        input.form-control(name="assigneEmail", type="text" value=lead.status)
+        br
+        input.btn.btn-primary(value="Submit", type="submit") 
+
+    form(method="POST", action='/leads/comments/'+lead._id)
+      #form-group
+        label(for='comment') Comment:
+        textarea#comment.form-control(rows='5', name='comment')= lead.comments
+        br
+        input.btn.btn-primary(value="Update Comments", type="submit")     
+
+
+
+
+ 
+  
+  
+  
+  

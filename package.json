@@ -1,0 +1,29 @@
+{
+  "name": "lmssudan",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.2",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-sessions": "^1.0.6",
+    "express-validator": "^5.0.0",
+    "mongoose": "^5.0.4",
+    "nodemailer": "^4.6.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.12.9",
+    "pug": "^2.0.0-rc.4"
+  },
+  "version": "1.0.0",
+  "description": "service reminder",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

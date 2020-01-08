@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  form( method="POST", action='/leads/edit/'+lead._id)
+    #form-group
+      label Name:
+      input.form-control(name="name", type="text", value=lead.name)
+    #form-group
+      label Email:
+      input.form-control(name="email", type="text", value=lead.email)    
+    #form-group
+      label Phone:
+      input.form-control(name="phone", type="text", value=lead.phone)
+    #form-group
+      label Company:
+      input.form-control(name="company", type="text", value=lead.company) 
+    #form-group
+      label Product:
+      input.form-control(name="product", type="text", value=lead.product) 
+    #form-group
+      label Product Range:
+      input.form-control(name="productRange", type="text", value=lead.productRange) 
+    //- #form-group
+      label Status:
+        select(name="status")
+          -var repeation = ['Not Assigned', 'Assigned', 'Quotation Given', 'Completed Won', 'Completed Lost']
+          for item in repeation
+            option(selected=lead.status == item) #{item}
+      br
+    #form-group
+      br
+      input.btn.btn-primary(value="Submit", type="submit")

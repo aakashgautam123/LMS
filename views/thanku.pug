@@ -1,0 +1,47 @@
+doctype html  
+html(lang='en')  
+ head
+  
+   meta(name='viewport', content='width=device-width, initial-scale=1')
+   title Thanku Page
+   script(src="/bower_components/jquery/dist/jquery.js")
+   link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.css")
+   link(rel="stylesheet", href="/css/style.css")    
+ body
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-111395605-1')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111395605-1');
+
+  script.
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '347926902396137');
+    fbq('track', 'PageView');
+  noscript
+    img(height='1', width='1', src='https://www.facebook.com/tr?id=347926902396137&ev=PageView\
+    &noscript=1')
+
+  //End Facebook Pixel Code
+
+
+  .navbar.navbar-light.bg-light.navbar-expand-lg.bg-primary.contactNav
+    .container
+      a.navbar-brand(href='https://www.fgwilson.com')
+        img(src='/images/fg-wilson-logo.jpg', width='140', height='auto', alt='')      
+             
+
+  .jumbotron.text-xs-center.thanku-jumbo
+        h1.display-3.text-center Thank You!
+        p.text-center.lead
+          strong We appreciate you contacting us 
+          |  We will get back to you shortly.
+        hr
